@@ -1,0 +1,111 @@
+$primary-color: #333;
+$secondary-color: #666;
+$hover-color: #555;
+$orange-color: orange;
+$orange-hover-color: rgb(230, 150, 1);
+$gray-color: #cecece;
+$gray-border-color: #b1b1b1;
+$button-width: 100px;
+
+body {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    font-family: "Noto Sans", Arial, sans-serif;
+    font-size: 42px;
+    background-color: black;
+    color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 60%;
+        height: 60%;
+        object-fit: cover;
+        position: relative;
+        right: 3px;
+        transition: all 0.3s;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#disp {
+    width: calc(($button-width * 4) + 20px);
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+button {
+    width: $button-width;
+    height: $button-width;
+    padding: 0;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    font-size: 36px;
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    transition: all 0.3s; 
+
+    &:hover {
+        background-color: $hover-color;
+    }
+
+    &:active {
+        background-color: #bbb;
+    }
+
+    &.o {
+        background-color: $orange-color;
+        border: 2px solid $orange-hover-color;
+
+        &:hover {
+            background-color: $orange-hover-color;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &.t {
+        background-color: $gray-color;
+        color: black;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 32px;
+    }
+
+    #disp {
+        width: calc(($button-width * 3) + 15px);
+        margin-right: 10px;
+    }
+
+    button {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+}
