@@ -40,6 +40,8 @@ function handleDelete() {
     if (delet.innerHTML === "AC") {
         disp.innerHTML = "0";
         counter = 0;
+        currentOperation = "";
+        currentOperationStyle();
     } else {
         disp.innerHTML = disp.innerHTML.length === 1 ? "0" : disp.innerHTML.slice(0, -1);
     }
@@ -49,6 +51,8 @@ function handleDelete() {
 function handleClear() {
     disp.innerHTML = "0";
     counter = 0;
+    currentOperation = "";
+    currentOperationStyle();
     dispDel();
     buttonLog();
 }
